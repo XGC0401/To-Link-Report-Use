@@ -286,6 +286,8 @@
   "settingsSaveFailed": "儲存設定失敗，請重試。",
   "languageChanged": "語言已成功更改！",
   "languageChangeFailed": "更改語言失敗。",
+  "postCreatedSuccess": "文章已成功建立！",
+  "postCreateFailed": "建立文章失敗，請重試。",
   "postUpdatedSuccess": "文章已成功更新！",
   "confirmDeletePostMessage": "您確定要刪除此文章嗎？",
   "deletePostTitle": "刪除文章",

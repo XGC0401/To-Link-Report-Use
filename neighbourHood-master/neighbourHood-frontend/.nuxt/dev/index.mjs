@@ -2119,7 +2119,22 @@ _tNrzlLCJ6ZMgCilQ6g2ZUCFOLX53UtVtnIfu21y_d8,
 _hBe9gg8mqkXi7XjtLiteBbcPjR5e4bYtLigTbm3Teg
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3484c-C9RVTtZZD8ShaHJiOxTYap7KVFg\"",
+    "mtime": "2026-04-28T17:12:54.452Z",
+    "size": 215116,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"6f153-7SJD4oT7GH1/SlIDnBIn2l3VlWs\"",
+    "mtime": "2026-04-28T17:12:54.452Z",
+    "size": 454995,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -3171,6 +3186,8 @@ var settingsSaved$1 = "Settings saved successfully!";
 var settingsSaveFailed$1 = "Failed to save settings. Please try again.";
 var languageChanged$1 = "Language changed successfully!";
 var languageChangeFailed$1 = "Failed to change language.";
+var postCreatedSuccess$1 = "Post created successfully!";
+var postCreateFailed$1 = "Failed to create post. Please try again.";
 var postUpdatedSuccess$1 = "Post updated successfully!";
 var confirmDeletePostMessage$1 = "Are you sure you want to delete this post?";
 var deletePostTitle$1 = "Delete Post";
@@ -3619,6 +3636,8 @@ const enLocale = {
 	settingsSaveFailed: settingsSaveFailed$1,
 	languageChanged: languageChanged$1,
 	languageChangeFailed: languageChangeFailed$1,
+	postCreatedSuccess: postCreatedSuccess$1,
+	postCreateFailed: postCreateFailed$1,
 	postUpdatedSuccess: postUpdatedSuccess$1,
 	confirmDeletePostMessage: confirmDeletePostMessage$1,
 	deletePostTitle: deletePostTitle$1,
@@ -4079,6 +4098,8 @@ const en = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   pleaseHelp: pleaseHelp$1,
   pleaseSelectCategory: pleaseSelectCategory$1,
   points: points$1,
+  postCreateFailed: postCreateFailed$1,
+  postCreatedSuccess: postCreatedSuccess$1,
   postDeletedSuccess: postDeletedSuccess$1,
   postFailed: postFailed$1,
   postNotifications: postNotifications$1,
@@ -4513,6 +4534,8 @@ var settingsSaved = "設定已成功儲存！";
 var settingsSaveFailed = "儲存設定失敗，請重試。";
 var languageChanged = "語言已成功更改！";
 var languageChangeFailed = "更改語言失敗。";
+var postCreatedSuccess = "文章已成功建立！";
+var postCreateFailed = "建立文章失敗，請重試。";
 var postUpdatedSuccess = "文章已成功更新！";
 var confirmDeletePostMessage = "您確定要刪除此文章嗎？";
 var deletePostTitle = "刪除文章";
@@ -4960,6 +4983,8 @@ const zhLocale = {
 	settingsSaveFailed: settingsSaveFailed,
 	languageChanged: languageChanged,
 	languageChangeFailed: languageChangeFailed,
+	postCreatedSuccess: postCreatedSuccess,
+	postCreateFailed: postCreateFailed,
 	postUpdatedSuccess: postUpdatedSuccess,
 	confirmDeletePostMessage: confirmDeletePostMessage,
 	deletePostTitle: deletePostTitle,
@@ -5419,6 +5444,8 @@ const zh = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   pleaseHelp: pleaseHelp,
   pleaseSelectCategory: pleaseSelectCategory,
   points: points,
+  postCreateFailed: postCreateFailed,
+  postCreatedSuccess: postCreatedSuccess,
   postDeletedSuccess: postDeletedSuccess,
   postFailed: postFailed,
   postNotifications: postNotifications,

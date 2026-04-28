@@ -412,7 +412,7 @@ const refreshWeatherCard = async () => {
 }
 
 const goToCreatePost = () => {
-  router.push('/posts')
+  router.push('/create-post')
 }
 
 const mergePosts = (localPosts: Post[], remotePosts: Post[]) => {
