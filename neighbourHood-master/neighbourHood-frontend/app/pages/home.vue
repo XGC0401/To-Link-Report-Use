@@ -51,6 +51,11 @@
           </div>
         </template>
         <p>{{ $t('welcomeMessage') }}</p>
+        <div class="welcome-actions">
+          <el-button type="primary" size="large" @click="goToCreatePost">
+            {{ $t('createNewPost') }}
+          </el-button>
+        </div>
       </el-card>
     </div>
 
@@ -404,6 +409,10 @@ const refreshWeatherCard = async () => {
   }
 
   await loadWeatherByClientIp()
+}
+
+const goToCreatePost = () => {
+  router.push('/posts')
 }
 
 const mergePosts = (localPosts: Post[], remotePosts: Post[]) => {
