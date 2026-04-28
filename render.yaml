@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: to-link-frontend
+    runtime: node
+    plan: free
+    rootDir: neighbourHood-master/neighbourHood-frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview -- --host 0.0.0.0 --port $PORT
+    autoDeploy: true
