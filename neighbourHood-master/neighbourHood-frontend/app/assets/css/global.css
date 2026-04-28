@@ -1,0 +1,129 @@
+html,
+body,
+#__nuxt,
+#app {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply base font size globally */
+* {
+  font-size: inherit;
+}
+
+body {
+  font-size: var(--base-font-size, 18px);
+}
+
+/* Element Plus components should respect base font size */
+.el-button,
+.el-input__inner,
+.el-textarea__inner,
+.el-select .el-input__inner,
+.el-dropdown-menu__item,
+.el-menu-item,
+.el-submenu__title,
+.el-card,
+.el-form-item__label,
+.el-radio,
+.el-checkbox,
+.el-tag,
+.el-descriptions__label,
+.el-descriptions__content,
+.el-dialog__body,
+.el-message,
+.el-notification,
+p,
+span,
+div,
+a,
+li,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+/* Preserve relative sizing for headings */
+h1 {
+  font-size: calc(var(--base-font-size, 18px) * 2);
+}
+
+h2 {
+  font-size: calc(var(--base-font-size, 18px) * 1.75);
+}
+
+h3 {
+  font-size: calc(var(--base-font-size, 18px) * 1.5);
+}
+
+/* Apply theme color to all primary buttons */
+.el-button--primary {
+  background-color: var(--el-color-primary) !important;
+  border-color: var(--el-color-primary) !important;
+  color: white !important;
+}
+
+.el-button--primary:hover {
+  background-color: color-mix(in srgb, var(--el-color-primary) 80%, black) !important;
+  border-color: color-mix(in srgb, var(--el-color-primary) 80%, black) !important;
+}
+
+.el-button--primary:focus,
+.el-button--primary:active {
+  background-color: color-mix(in srgb, var(--el-color-primary) 80%, black) !important;
+  border-color: color-mix(in srgb, var(--el-color-primary) 80%, black) !important;
+}
+
+/* Dark mode for el-descriptions */
+html.dark .el-descriptions {
+  --el-descriptions-item-bordered-label-background: #262727 !important;
+  --el-descriptions-item-bordered-content-background: #1a1a1a !important;
+  --el-border-color: #404040 !important;
+  --el-fill-color-lighter: #262727 !important;
+  --el-fill-color-blank: #1a1a1a !important;
+  --el-bg-color: #1a1a1a !important;
+}
+
+html.dark .el-descriptions__label,
+html.dark .el-descriptions__label.el-descriptions__cell.is-bordered-label {
+  color: #e5e7eb !important;
+  background-color: #262727 !important;
+}
+
+html.dark .el-descriptions__content,
+html.dark .el-descriptions__content.el-descriptions__cell.is-bordered-content {
+  color: #d1d5db !important;
+  background-color: #1a1a1a !important;
+}
+
+html.dark .el-descriptions__cell {
+  border-color: #404040 !important;
+}
+
+html.dark .el-descriptions .el-descriptions__body {
+  background-color: transparent !important;
+}
+
+html.dark .el-descriptions tr {
+  background-color: transparent !important;
+}
+
+html.dark .el-descriptions__table {
+  background-color: transparent !important;
+}
+
+/* Dark mode for empty state */
+html.dark .el-empty__image svg {
+  fill: #4b5563 !important;
+}
+
+html.dark .el-empty__image svg path {
+  fill: #4b5563 !important;
+}
+
+html.dark .el-empty__description {
+  color: #9ca3af !important;
+}

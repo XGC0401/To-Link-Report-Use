@@ -1,0 +1,40 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8EC5FC"/>
+      <stop offset="1" stop-color="#E0C3FC"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="620" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5D7F8F"/>
+      <stop offset="1" stop-color="#29445A"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect y="620" width="1600" height="280" fill="url(#floor)"/>
+
+  <g filter="url(#shadow)" transform="translate(520,220)">
+    <g transform="translate(0,20)">
+      <circle cx="170" cy="140" r="68" fill="#F7E8C8"/>
+      <rect x="102" y="214" width="136" height="220" rx="60" fill="#F7E8C8"/>
+      <rect x="20" y="238" width="168" height="52" rx="26" transform="rotate(-10 20 238)" fill="#F7E8C8"/>
+      <rect x="162" y="234" width="170" height="52" rx="26" transform="rotate(14 162 234)" fill="#F7E8C8"/>
+      <rect x="112" y="404" width="54" height="164" rx="24" transform="rotate(10 112 404)" fill="#F7E8C8"/>
+      <rect x="176" y="404" width="54" height="164" rx="24" transform="rotate(-6 176 404)" fill="#F7E8C8"/>
+    </g>
+
+    <g transform="translate(280,0)">
+      <circle cx="170" cy="140" r="68" fill="#F7E8C8"/>
+      <rect x="102" y="214" width="136" height="220" rx="60" fill="#F7E8C8"/>
+      <rect x="18" y="240" width="178" height="52" rx="26" transform="rotate(12 18 240)" fill="#F7E8C8"/>
+      <rect x="150" y="226" width="170" height="52" rx="26" transform="rotate(-16 150 226)" fill="#F7E8C8"/>
+      <rect x="114" y="404" width="54" height="164" rx="24" transform="rotate(-8 114 404)" fill="#F7E8C8"/>
+      <rect x="178" y="404" width="54" height="164" rx="24" transform="rotate(8 178 404)" fill="#F7E8C8"/>
+    </g>
+
+    <circle cx="355" cy="220" r="20" fill="#F7E8C8"/>
+  </g>
+</svg>
