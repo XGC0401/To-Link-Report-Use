@@ -161,12 +161,7 @@ export async function publishPost(formdata: FormData): Promise<APIResponse<Basic
 
     posts.unshift(newPost)
     saveMockPosts(posts)
-
-    const existingUserPosts = JSON.parse(localStorage.getItem('userPosts') || '[]')
-    if (Array.isArray(existingUserPosts)) {
-      existingUserPosts.unshift(newPost)
-      localStorage.setItem('userPosts', JSON.stringify(existingUserPosts))
-    }
+    localStorage.setItem('cachedPosts', JSON.stringify(posts))
 
     const response: BasicResponse<Boolean> = {
       code: '200',

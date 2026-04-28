@@ -151,6 +151,71 @@ const currentUserRewardPoints = computed(() => currentUser.value.rewardPoints)
 
 const posts = ref<Post[]>([]);
 
+const POST_STORAGE_KEYS = ['userPosts', 'cachedPosts', 'mockApiPosts'] as const
+
+const getStoredPosts = (key: typeof POST_STORAGE_KEYS[number]): Post[] => {
+  try {
+    const raw = localStorage.getItem(key)
+    if (!raw) {
+      return []
+    }
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed : []
+  } catch (error) {
+    console.error(`Failed to parse ${key}`, error)
+    return []
+  }
+}
+
+const sortPosts = (items: Post[]) => {
+  return [...items].sort((a, b) => {
+    const left = a.createTime ? new Date(a.createTime as any).getTime() : a.id
+    const right = b.createTime ? new Date(b.createTime as any).getTime() : b.id
+    return right - left
+  })
+}
+
+const dedupePostsById = (items: Post[]) => {
+  const postMap = new Map<number, Post>()
+
+  sortPosts(items).forEach((post) => {
+    if (!post || typeof post.id !== 'number') {
+      return
+    }
+
+    const existing = postMap.get(post.id)
+    postMap.set(post.id, {
+      ...existing,
+      ...post,
+      user: post.user || existing?.user
+    })
+  })
+
+  return sortPosts(Array.from(postMap.values()))
+}
+
+const removePostFromAllStores = (postId: number) => {
+  POST_STORAGE_KEYS.forEach((key) => {
+    const postsInStore = getStoredPosts(key)
+    const filtered = postsInStore.filter((item) => item?.id !== postId)
+    localStorage.setItem(key, JSON.stringify(dedupePostsById(filtered)))
+  })
+}
+
+const updatePostInAllStores = (updatedPost: Post) => {
+  POST_STORAGE_KEYS.forEach((key) => {
+    const postsInStore = getStoredPosts(key)
+    const postIndex = postsInStore.findIndex((item) => item?.id === updatedPost.id)
+    if (postIndex > -1) {
+      postsInStore[postIndex] = {
+        ...postsInStore[postIndex],
+        ...updatedPost
+      }
+      localStorage.setItem(key, JSON.stringify(dedupePostsById(postsInStore)))
+    }
+  })
+}
+
 // Quest Requests
 const questRequests = ref([
   {
@@ -579,18 +644,7 @@ function saveEditedPost(data: { id: number, title: string, content: string, cate
       category: data.category
     }
 
-    // Update localStorage
-    const userPosts = JSON.parse(localStorage.getItem('userPosts') || '[]')
-    const userPostIndex = userPosts.findIndex((p: any) => p.id === data.id)
-    if (userPostIndex > -1) {
-      userPosts[userPostIndex] = {
-        ...userPosts[userPostIndex],
-        title: data.title,
-        content: data.content,
-        category: data.category
-      }
-      localStorage.setItem('userPosts', JSON.stringify(userPosts))
-    }
+    updatePostInAllStores(posts.value[postIndex])
 
     ElMessage.success(t('postUpdatedSuccess'))
   }
@@ -606,16 +660,10 @@ function deletePost(post: any) {
       type: 'warning',
     }
   ).then(() => {
-    const index = posts.value.findIndex(p => p.id === post.id)
-    if (index > -1) {
-      posts.value.splice(index, 1)
-      // Update localStorage
-      const userPosts = JSON.parse(localStorage.getItem('userPosts') || '[]')
-      const userPostIndex = userPosts.findIndex((p: any) => p.id === post.id)
-      if (userPostIndex > -1) {
-        userPosts.splice(userPostIndex, 1)
-        localStorage.setItem('userPosts', JSON.stringify(userPosts))
-      }
+    const beforeCount = posts.value.length
+    posts.value = posts.value.filter((item) => item.id !== post.id)
+    removePostFromAllStores(post.id)
+    if (posts.value.length < beforeCount) {
       ElMessage.success(t('postDeletedSuccess'))
     }
   }).catch(() => {
@@ -713,25 +761,12 @@ onMounted(async () => {
     console.error('Failed to load user:', err)
   }
 
-  // Load cached posts immediately for instant display
-  const cachedPosts = localStorage.getItem('cachedPosts')
-  const userPosts = localStorage.getItem('userPosts')
-  
-  if (cachedPosts) {
-    try {
-      const parsed = JSON.parse(cachedPosts)
-      const userPostsParsed = userPosts ? JSON.parse(userPosts) : []
-      posts.value = [...userPostsParsed, ...parsed]
-    } catch (e) {
-      console.error('Error parsing cached posts', e)
-    }
-  } else if (userPosts) {
-    try {
-      posts.value = JSON.parse(userPosts)
-    } catch (e) {
-      console.error('Error parsing user posts', e)
-    }
-  }
+  // Load local posts immediately and dedupe by id.
+  posts.value = dedupePostsById([
+    ...getStoredPosts('userPosts'),
+    ...getStoredPosts('cachedPosts'),
+    ...getStoredPosts('mockApiPosts')
+  ])
 
   // Load user quests from localStorage immediately
   const userQuests = localStorage.getItem('userQuests')
@@ -758,12 +793,9 @@ onMounted(async () => {
   try {
     const [error, data, options] = await getPost();
     if (!error && data && data.data && Array.isArray(data.data)) {
-      // Cache the fresh data
-      localStorage.setItem('cachedPosts', JSON.stringify(data.data))
-      
-      // Update posts with fresh data
-      const userPostsParsed = userPosts ? JSON.parse(userPosts) : []
-      posts.value = [...userPostsParsed, ...data.data]
+      const dedupedApiPosts = dedupePostsById(data.data)
+      localStorage.setItem('cachedPosts', JSON.stringify(dedupedApiPosts))
+      posts.value = dedupePostsById([...posts.value, ...dedupedApiPosts])
     } else {
       console.error('wrong data format', data);
       if (posts.value.length === 0) {
