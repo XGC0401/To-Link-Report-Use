@@ -1327,4 +1327,57 @@ onUnmounted(() => {
 :global(.dark) .home-page-shell :deep(.el-tag) {
   border-color: #6b3f16 !important;
 }
+
+/* Final dark enforcement for Home: keep containers and text readable */
+:global(html.dark) .home-page-shell .welcome-card,
+:global(html.dark) .home-page-shell .posts-section,
+:global(html.dark) .home-page-shell .quests-section,
+:global(html.dark) .home-page-shell .post-card,
+:global(html.dark) .home-page-shell .applicant-item,
+:global(body.dark) .home-page-shell .welcome-card,
+:global(body.dark) .home-page-shell .posts-section,
+:global(body.dark) .home-page-shell .quests-section,
+:global(body.dark) .home-page-shell .post-card,
+:global(body.dark) .home-page-shell .applicant-item,
+:global(.dark) .home-page-shell .welcome-card,
+:global(.dark) .home-page-shell .posts-section,
+:global(.dark) .home-page-shell .quests-section,
+:global(.dark) .home-page-shell .post-card,
+:global(.dark) .home-page-shell .applicant-item {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
+}
+
+:global(html.dark) .home-page-shell .section-header,
+:global(body.dark) .home-page-shell .section-header,
+:global(.dark) .home-page-shell .section-header {
+  border-bottom-color: #334155 !important;
+}
+
+:global(html.dark) .home-page-shell .section-header h3,
+:global(html.dark) .home-page-shell .card-header h2,
+:global(html.dark) .home-page-shell .author-name,
+:global(html.dark) .home-page-shell .post-time,
+:global(html.dark) .home-page-shell .post-content,
+:global(html.dark) .home-page-shell .post-content h4,
+:global(html.dark) .home-page-shell .post-content p,
+:global(body.dark) .home-page-shell .section-header h3,
+:global(body.dark) .home-page-shell .card-header h2,
+:global(body.dark) .home-page-shell .author-name,
+:global(body.dark) .home-page-shell .post-time,
+:global(body.dark) .home-page-shell .post-content,
+:global(body.dark) .home-page-shell .post-content h4,
+:global(body.dark) .home-page-shell .post-content p,
+:global(.dark) .home-page-shell .section-header h3,
+:global(.dark) .home-page-shell .card-header h2,
+:global(.dark) .home-page-shell .author-name,
+:global(.dark) .home-page-shell .post-time,
+:global(.dark) .home-page-shell .post-content,
+:global(.dark) .home-page-shell .post-content h4,
+:global(.dark) .home-page-shell .post-content p {
+  color: #e2e8f0 !important;
+  text-shadow: none !important;
+}
 </style>
