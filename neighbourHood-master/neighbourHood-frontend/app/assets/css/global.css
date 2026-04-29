@@ -118,3 +118,147 @@ html.dark .el-radio__label {
 html.dark .el-empty__description p {
   color: #94a3b8 !important;
 }
+
+/* =====================================================
+   Dark mode final enforcement for page-level containers
+   and nested Element Plus internals that can remain white
+   ===================================================== */
+
+/* 1,2) Home welcome + recent/pending/accepted containers */
+html.dark .home-page-shell .welcome-card,
+html.dark .home-page-shell .posts-section,
+html.dark .home-page-shell .quests-section,
+html.dark .home-page-shell .post-card,
+html.dark .home-page-shell .applicant-item,
+html.dark .home-page-shell .weather-card {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .home-page-shell .post-card .el-card__header,
+html.dark .home-page-shell .post-card .el-card__body,
+html.dark .home-page-shell .post-card .el-card__footer,
+html.dark .home-page-shell .welcome-card .el-card__header,
+html.dark .home-page-shell .welcome-card .el-card__body {
+  background: transparent !important;
+  border-color: #334155 !important;
+}
+
+/* 3) Posts/requests search bars + post/request containers */
+html.dark .posts-header,
+html.dark .quests-header,
+html.dark .rewards-info,
+html.dark .posts-list .el-card,
+html.dark .quests-list .el-card,
+html.dark .post-card,
+html.dark .quest-card {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .posts-list .el-card__header,
+html.dark .posts-list .el-card__body,
+html.dark .posts-list .el-card__footer,
+html.dark .quests-list .el-card__header,
+html.dark .quests-list .el-card__body,
+html.dark .quests-list .el-card__footer,
+html.dark .quest-card .el-card__header,
+html.dark .quest-card .el-card__body,
+html.dark .quest-card .el-card__footer {
+  background: transparent !important;
+  border-color: #334155 !important;
+}
+
+html.dark .post-page-shell .el-input__wrapper,
+html.dark .post-page-shell .el-select__wrapper,
+html.dark .posts-header .el-input__wrapper,
+html.dark .posts-header .el-select__wrapper,
+html.dark .quests-header .el-input__wrapper,
+html.dark .quests-header .el-select__wrapper {
+  background: #0f172a !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
+}
+
+/* 4) Friends search bar + friend containers */
+html.dark .friends-toolbar,
+html.dark .friend-card {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .friend-card .el-card__body {
+  background: transparent !important;
+}
+
+html.dark .friends-toolbar .el-input__wrapper,
+html.dark .friends-toolbar .el-select__wrapper {
+  background: #0f172a !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
+}
+
+/* 5) Font size slider bar */
+html.dark .font-size-slider-container,
+html.dark .sample-text {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .font-size-slider-container .el-slider__runway {
+  background: #1f2937 !important;
+}
+
+html.dark .font-size-slider-container .el-slider__bar {
+  background: var(--el-color-primary) !important;
+}
+
+html.dark .font-size-slider-container .el-slider__button {
+  border-color: #94a3b8 !important;
+  background: #0f172a !important;
+}
+
+/* 6) Whole profile/settings containers */
+html.dark .settings-card,
+html.dark .notification-item,
+html.dark .profile-card,
+html.dark .avatar-uploader-wrapper,
+html.dark .address-item,
+html.dark .day-schedule {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .settings-form .el-input__wrapper,
+html.dark .settings-form .el-select__wrapper,
+html.dark .settings-form .el-radio-button__inner,
+html.dark .profile-form .el-input__wrapper,
+html.dark .profile-form .el-select__wrapper,
+html.dark .profile-form .el-textarea__inner,
+html.dark .profile-form .el-time-select .el-input__wrapper {
+  background: #0f172a !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .settings-form .el-form-item__label,
+html.dark .profile-form .el-form-item__label,
+html.dark .card-header h2,
+html.dark .notification-label,
+html.dark .address-item-label,
+html.dark .address-hint,
+html.dark .availability-hint,
+html.dark .author-name,
+html.dark .post-time,
+html.dark .post-title,
+html.dark .post-range,
+html.dark .quest-content h3,
+html.dark .quest-detail-text,
+html.dark .friend-info h3,
+html.dark .friend-status,
+html.dark .friend-bio {
+  color: #e2e8f0 !important;
+}
