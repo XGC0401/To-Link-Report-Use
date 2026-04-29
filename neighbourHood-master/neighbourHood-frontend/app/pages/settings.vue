@@ -862,6 +862,12 @@ const handleCancel = () => {
 }
 
 .settings-page-shell {
+  --settings-card-bg: #ffffff;
+  --settings-card-border: #eceef3;
+  --settings-text: #111827;
+  --settings-input-bg: #ffffff;
+  --settings-input-border: #dfe3eb;
+  --settings-tab-active: #ff6f00;
   padding: 0 !important;
   border: none !important;
   border-radius: 0 !important;
@@ -884,8 +890,8 @@ const handleCancel = () => {
 .notification-item,
 .font-size-slider-container,
 .sample-text {
-  background: #ffffff !important;
-  border: 1px solid #eceef3 !important;
+  background: var(--settings-card-bg) !important;
+  border: 1px solid var(--settings-card-border) !important;
   border-radius: 12px !important;
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05) !important;
   backdrop-filter: none !important;
@@ -895,7 +901,7 @@ const handleCancel = () => {
   text-transform: none !important;
   letter-spacing: 0 !important;
   font-size: 28px !important;
-  color: #111827 !important;
+  color: var(--settings-text) !important;
   text-shadow: none !important;
 }
 
@@ -919,28 +925,28 @@ const handleCancel = () => {
 }
 
 .settings-tabs :deep(.el-tabs__item.is-active) {
-  color: #ff6f00 !important;
+  color: var(--settings-tab-active) !important;
 }
 
 .settings-tabs :deep(.el-tabs__active-bar) {
-  background: #ff6f00 !important;
+  background: var(--settings-tab-active) !important;
 }
 
 .settings-form :deep(.el-form-item__label) {
   font-size: 15px !important;
-  color: #111827 !important;
+  color: var(--settings-text) !important;
 }
 
 .settings-form :deep(.el-input__wrapper),
 .settings-form :deep(.el-select__wrapper),
 .settings-form :deep(.el-radio-button__inner) {
-  background: #ffffff !important;
-  box-shadow: 0 0 0 1px #dfe3eb inset !important;
+  background: var(--settings-input-bg) !important;
+  box-shadow: 0 0 0 1px var(--settings-input-border) inset !important;
   border-radius: 10px !important;
 }
 
 .settings-form :deep(.el-radio-button__inner) {
-  color: #1f2937 !important;
+  color: var(--settings-text) !important;
 }
 
 .settings-form :deep(.el-radio-button__original-radio:checked + .el-radio-button__inner) {
@@ -1011,6 +1017,17 @@ const handleCancel = () => {
 
 :global(.dark) .settings-tabs :deep(.el-tabs__active-bar) {
   background: #ff9f52 !important;
+}
+
+:global(html.dark) .settings-page-shell,
+:global(body.dark) .settings-page-shell,
+:global(.dark) .settings-page-shell {
+  --settings-card-bg: #111827;
+  --settings-card-border: #334155;
+  --settings-text: #e2e8f0;
+  --settings-input-bg: #0f172a;
+  --settings-input-border: #334155;
+  --settings-tab-active: #ff9f52;
 }
 
 /* Final dark overrides: keep settings containers and fields non-white */

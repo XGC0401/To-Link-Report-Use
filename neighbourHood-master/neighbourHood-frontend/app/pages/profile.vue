@@ -1034,6 +1034,11 @@ const handleCancel = () => {
 }
 
 .profile-page-shell {
+  --profile-card-bg: #ffffff;
+  --profile-card-border: #eceef3;
+  --profile-card-text: #111827;
+  --profile-input-bg: #ffffff;
+  --profile-input-border: #dfe3eb;
   padding: 0 !important;
   border: none !important;
   border-radius: 0 !important;
@@ -1056,8 +1061,8 @@ const handleCancel = () => {
 .avatar-uploader-wrapper,
 .address-item,
 .day-schedule {
-  background: #ffffff !important;
-  border: 1px solid #eceef3 !important;
+  background: var(--profile-card-bg) !important;
+  border: 1px solid var(--profile-card-border) !important;
   border-radius: 12px !important;
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05) !important;
   backdrop-filter: none !important;
@@ -1067,7 +1072,7 @@ const handleCancel = () => {
   text-transform: none !important;
   letter-spacing: 0 !important;
   font-size: 28px !important;
-  color: #111827 !important;
+  color: var(--profile-card-text) !important;
   text-shadow: none !important;
 }
 
@@ -1094,8 +1099,8 @@ const handleCancel = () => {
 .profile-form :deep(.el-textarea__inner),
 .profile-form :deep(.el-select__wrapper),
 .profile-form :deep(.el-time-select .el-input__wrapper) {
-  background: #ffffff !important;
-  box-shadow: 0 0 0 1px #dfe3eb inset !important;
+  background: var(--profile-input-bg) !important;
+  box-shadow: 0 0 0 1px var(--profile-input-border) inset !important;
   border-radius: 10px !important;
 }
 
@@ -1119,6 +1124,11 @@ const handleCancel = () => {
 :global(.dark) .avatar-uploader-wrapper,
 :global(.dark) .address-item,
 :global(.dark) .day-schedule {
+  --profile-card-bg: #111827;
+  --profile-card-border: #334155;
+  --profile-card-text: #f9fafb;
+  --profile-input-bg: #0f172a;
+  --profile-input-border: #334155;
   background: #111827 !important;
   border-color: #1f2937 !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
@@ -1134,6 +1144,16 @@ const handleCancel = () => {
 :global(.dark) .profile-form :deep(.el-time-select .el-input__wrapper) {
   background: #0f172a !important;
   box-shadow: 0 0 0 1px #334155 inset !important;
+}
+
+:global(html.dark) .profile-page-shell,
+:global(body.dark) .profile-page-shell,
+:global(.dark) .profile-page-shell {
+  --profile-card-bg: #111827;
+  --profile-card-border: #334155;
+  --profile-card-text: #f9fafb;
+  --profile-input-bg: #0f172a;
+  --profile-input-border: #334155;
 }
 
 @media (max-width: 768px) {

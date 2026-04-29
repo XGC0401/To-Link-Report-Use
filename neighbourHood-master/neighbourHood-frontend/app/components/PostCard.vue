@@ -234,7 +234,7 @@ const tagValue = computed(() => {
 
 .post-content p {
   margin: 12px 0 12px 0;
-  color: #666;
+  color: var(--el-text-color-regular);
   line-height: 1.6;
 }
 
@@ -262,5 +262,47 @@ const tagValue = computed(() => {
 .post-footer {
   display: flex;
   justify-content: space-between;
+}
+
+/* Final dark enforcement for card internals */
+:global(html.dark) .post-card,
+:global(body.dark) .post-card,
+:global(.dark) .post-card {
+  background: #111827 !important;
+  border: 1px solid #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .post-card .post-content p,
+:global(html.dark) .post-card .post-title,
+:global(html.dark) .post-card .post-range,
+:global(html.dark) .post-card .author-name,
+:global(html.dark) .post-card .post-time,
+:global(body.dark) .post-card .post-content p,
+:global(body.dark) .post-card .post-title,
+:global(body.dark) .post-card .post-range,
+:global(body.dark) .post-card .author-name,
+:global(body.dark) .post-card .post-time,
+:global(.dark) .post-card .post-content p,
+:global(.dark) .post-card .post-title,
+:global(.dark) .post-card .post-range,
+:global(.dark) .post-card .author-name,
+:global(.dark) .post-card .post-time {
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .post-card :deep(.el-card__header),
+:global(html.dark) .post-card :deep(.el-card__footer),
+:global(body.dark) .post-card :deep(.el-card__header),
+:global(body.dark) .post-card :deep(.el-card__footer),
+:global(.dark) .post-card :deep(.el-card__header),
+:global(.dark) .post-card :deep(.el-card__footer) {
+  border-color: #334155 !important;
+}
+
+:global(html.dark) .post-card :deep(.el-button),
+:global(body.dark) .post-card :deep(.el-button),
+:global(.dark) .post-card :deep(.el-button) {
+  color: #cbd5e1 !important;
 }
 </style>

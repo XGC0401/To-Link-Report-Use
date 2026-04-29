@@ -475,4 +475,45 @@ const sendMessage = (friend: Friend) => {
   background: #0f172a !important;
   box-shadow: 0 0 0 1px #334155 inset !important;
 }
+
+/* Final dark enforcement for friends page containers */
+:global(html.dark) .friends-toolbar,
+:global(body.dark) .friends-toolbar,
+:global(.dark) .friends-toolbar,
+:global(html.dark) .friend-card,
+:global(body.dark) .friend-card,
+:global(.dark) .friend-card {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .friend-card :deep(.el-card__body),
+:global(body.dark) .friend-card :deep(.el-card__body),
+:global(.dark) .friend-card :deep(.el-card__body) {
+  background: transparent !important;
+}
+
+:global(html.dark) .friends-toolbar :deep(.el-input__wrapper),
+:global(html.dark) .friends-toolbar :deep(.el-select__wrapper),
+:global(body.dark) .friends-toolbar :deep(.el-input__wrapper),
+:global(body.dark) .friends-toolbar :deep(.el-select__wrapper),
+:global(.dark) .friends-toolbar :deep(.el-input__wrapper),
+:global(.dark) .friends-toolbar :deep(.el-select__wrapper) {
+  background: #0f172a !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .friend-info h3,
+:global(html.dark) .friend-status,
+:global(html.dark) .friend-bio,
+:global(body.dark) .friend-info h3,
+:global(body.dark) .friend-status,
+:global(body.dark) .friend-bio,
+:global(.dark) .friend-info h3,
+:global(.dark) .friend-status,
+:global(.dark) .friend-bio {
+  color: #e2e8f0 !important;
+}
 </style>
