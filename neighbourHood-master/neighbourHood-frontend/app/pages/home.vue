@@ -1380,4 +1380,12 @@ onUnmounted(() => {
   color: #e2e8f0 !important;
   text-shadow: none !important;
 }
+
+/* Keep section titles highly readable in dark mode */
+:global(html.dark) .home-page-shell .section-header h3,
+:global(body.dark) .home-page-shell .section-header h3,
+:global(.dark) .home-page-shell .section-header h3 {
+  color: #f8fafc !important;
+  text-shadow: 0 1px 0 rgba(15, 23, 42, 0.55) !important;
+}
 </style>
