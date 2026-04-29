@@ -296,19 +296,19 @@ const handleCommand = (command: string) => {
 }
 
 :global(.dark) .app-layout {
-  background: #020617;
+  background: #020617 !important;
 }
 
 :global(.dark) .app-header {
-  background: #0f172a;
-  border-bottom-color: #1e293b;
+  background: #0f172a !important;
+  border-bottom-color: #1e293b !important;
   box-shadow: 0 2px 8px rgba(2, 6, 23, 0.5);
 }
 
 :global(.dark) .app-title,
 :global(.dark) .top-nav-button,
 :global(.dark) .top-nav-button span {
-  color: #e2e8f0;
+  color: #e2e8f0 !important;
 }
 
 :global(.dark) .top-nav-active {
