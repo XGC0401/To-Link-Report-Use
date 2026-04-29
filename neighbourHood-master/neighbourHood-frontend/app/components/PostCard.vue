@@ -167,7 +167,7 @@ const tagValue = computed(() => {
 
 .post-information p {
   margin: 0 !important;
-  color: black;
+  color: var(--el-text-color-primary);
   line-height: 5px;
 }
 
@@ -217,13 +217,13 @@ const tagValue = computed(() => {
 .author-name {
   margin: 0;
   font-weight: 600;
-  color: #333;
+  color: var(--el-text-color-primary);
 }
 
 .post-time {
   margin: 0;
   font-size: 16px;
-  color: #999;
+  color: var(--el-text-color-secondary);
 }
 
 
