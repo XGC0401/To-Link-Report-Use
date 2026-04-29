@@ -1170,4 +1170,51 @@ const handleCancel = () => {
     width: 100%;
   }
 }
+
+  /* Final dark overrides: keep profile containers/fields dark and readable */
+  :global(html.dark) .profile-card,
+  :global(html.dark) .avatar-uploader-wrapper,
+  :global(html.dark) .address-item,
+  :global(html.dark) .day-schedule,
+  :global(body.dark) .profile-card,
+  :global(body.dark) .avatar-uploader-wrapper,
+  :global(body.dark) .address-item,
+  :global(body.dark) .day-schedule {
+    background: #111827 !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+
+  :global(html.dark) .card-header h2,
+  :global(body.dark) .card-header h2,
+  :global(html.dark) .address-item-label,
+  :global(body.dark) .address-item-label,
+  :global(html.dark) .address-hint,
+  :global(body.dark) .address-hint,
+  :global(html.dark) .availability-hint,
+  :global(body.dark) .availability-hint,
+  :global(html.dark) .profile-form :deep(.el-form-item__label),
+  :global(body.dark) .profile-form :deep(.el-form-item__label) {
+    color: #e2e8f0 !important;
+  }
+
+  :global(html.dark) .profile-form :deep(.el-input__wrapper),
+  :global(html.dark) .profile-form :deep(.el-textarea__inner),
+  :global(html.dark) .profile-form :deep(.el-select__wrapper),
+  :global(html.dark) .profile-form :deep(.el-time-select .el-input__wrapper),
+  :global(body.dark) .profile-form :deep(.el-input__wrapper),
+  :global(body.dark) .profile-form :deep(.el-textarea__inner),
+  :global(body.dark) .profile-form :deep(.el-select__wrapper),
+  :global(body.dark) .profile-form :deep(.el-time-select .el-input__wrapper) {
+    background: #0f172a !important;
+    box-shadow: 0 0 0 1px #334155 inset !important;
+    color: #e2e8f0 !important;
+  }
+
+  :global(html.dark) .privacy-button,
+  :global(body.dark) .privacy-button {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
 </style>

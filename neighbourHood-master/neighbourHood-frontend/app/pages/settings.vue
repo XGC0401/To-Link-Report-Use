@@ -1012,4 +1012,45 @@ const handleCancel = () => {
 :global(.dark) .settings-tabs :deep(.el-tabs__active-bar) {
   background: #ff9f52 !important;
 }
+
+/* Final dark overrides: keep settings containers and fields non-white */
+:global(html.dark) .settings-card,
+:global(html.dark) .notification-item,
+:global(html.dark) .font-size-slider-container,
+:global(html.dark) .sample-text,
+:global(body.dark) .settings-card,
+:global(body.dark) .notification-item,
+:global(body.dark) .font-size-slider-container,
+:global(body.dark) .sample-text {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .settings-form :deep(.el-form-item__label),
+:global(body.dark) .settings-form :deep(.el-form-item__label),
+:global(html.dark) .notification-label,
+:global(body.dark) .notification-label,
+:global(html.dark) .slider-label,
+:global(body.dark) .slider-label,
+:global(html.dark) .color-value,
+:global(body.dark) .color-value {
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .settings-form :deep(.el-input__wrapper),
+:global(html.dark) .settings-form :deep(.el-select__wrapper),
+:global(html.dark) .settings-form :deep(.el-radio-button__inner),
+:global(body.dark) .settings-form :deep(.el-input__wrapper),
+:global(body.dark) .settings-form :deep(.el-select__wrapper),
+:global(body.dark) .settings-form :deep(.el-radio-button__inner) {
+  background: #0f172a !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .settings-form :deep(.el-switch__label),
+:global(body.dark) .settings-form :deep(.el-switch__label) {
+  color: #e2e8f0 !important;
+}
 </style>

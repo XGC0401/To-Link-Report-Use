@@ -1392,4 +1392,37 @@ onMounted(async () => {
 :global(.dark) .tabs-container :deep(.el-tabs__active-bar) {
   background: #ff9f52 !important;
 }
+
+/* Final dark overrides: must be last to beat white !important marketplace block */
+:global(html.dark) .posts-header,
+:global(html.dark) .quests-header,
+:global(body.dark) .posts-header,
+:global(body.dark) .quests-header,
+:global(html.dark) .posts-list :deep(.el-card),
+:global(html.dark) .quests-list :deep(.el-card),
+:global(body.dark) .posts-list :deep(.el-card),
+:global(body.dark) .quests-list :deep(.el-card) {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .post-page-shell :deep(.el-input__wrapper),
+:global(html.dark) .post-page-shell :deep(.el-select__wrapper),
+:global(body.dark) .post-page-shell :deep(.el-input__wrapper),
+:global(body.dark) .post-page-shell :deep(.el-select__wrapper) {
+  background: #0f172a !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
+  color: #e2e8f0 !important;
+}
+
+:global(html.dark) .tabs-container :deep(.el-tabs__item),
+:global(body.dark) .tabs-container :deep(.el-tabs__item) {
+  color: #94a3b8 !important;
+}
+
+:global(html.dark) .tabs-container :deep(.el-tabs__item.is-active),
+:global(body.dark) .tabs-container :deep(.el-tabs__item.is-active) {
+  color: #ff9f52 !important;
+}
 </style>
