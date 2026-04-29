@@ -95,7 +95,7 @@
               <p>{{ post.content }}</p>
               <div class="post-tags">
                 <el-tag v-if="isMyPost(post)" type="info" class="post-tag">{{ $t('yourPost') }}</el-tag>
-                <el-tag class="post-tag">{{ getCategoryLabel(post.request_type) }}</el-tag>
+                <el-tag class="post-tag">{{ getCategoryLabel(post) }}</el-tag>
                 <el-tag v-if="post.is_important" type="danger" class="post-tag">{{ $t('important') }}</el-tag>
                 <el-tag v-if="post.redeemPoints" type="warning" class="post-tag">
                   {{ post.redeemPoints }} {{ $t('points') }}
@@ -480,7 +480,11 @@ const formatDate = (date: Date | undefined) => {
 }
 
 // Get category label
-const getCategoryLabel = (requestType: number) => {
+const getCategoryLabel = (post: Post) => {
+  if (post.category && post.category.trim()) {
+    return post.category.trim()
+  }
+
   const categories: Record<number, string> = {
     0: t('shopping'),
     1: t('repair'),
@@ -488,7 +492,7 @@ const getCategoryLabel = (requestType: number) => {
     3: t('daily'),
     4: t('other')
   }
-  return categories[requestType] || t('other')
+  return categories[post.request_type] || t('other')
 }
 
 const persistQuestRequests = () => {

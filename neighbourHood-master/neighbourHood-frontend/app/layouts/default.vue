@@ -294,4 +294,33 @@ const handleCommand = (command: string) => {
 .app-main::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
+
+:global(.dark) .app-layout {
+  background: #020617;
+}
+
+:global(.dark) .app-header {
+  background: #0f172a;
+  border-bottom-color: #1e293b;
+  box-shadow: 0 2px 8px rgba(2, 6, 23, 0.5);
+}
+
+:global(.dark) .app-title,
+:global(.dark) .top-nav-button,
+:global(.dark) .top-nav-button span {
+  color: #e2e8f0;
+}
+
+:global(.dark) .top-nav-active {
+  color: #f8fafc !important;
+  background-color: color-mix(in srgb, var(--el-color-primary) 30%, transparent);
+}
+
+:global(.dark) .app-main::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+:global(.dark) .app-main::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
 </style>

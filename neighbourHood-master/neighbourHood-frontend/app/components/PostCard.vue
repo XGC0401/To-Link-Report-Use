@@ -138,6 +138,10 @@ function formatDateTime(dateTime: Date | undefined): string {
 // }
 
 const tagValue = computed(() => {
+  if (props.post.category && props.post.category.trim()) {
+    return props.post.category.trim()
+  }
+
   switch (props.post.request_type) {
     case 0: return $t('shopping')
     case 1: return $t('repair')

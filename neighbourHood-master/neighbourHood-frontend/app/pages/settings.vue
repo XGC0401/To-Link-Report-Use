@@ -939,6 +939,16 @@ const handleCancel = () => {
   border-radius: 10px !important;
 }
 
+.settings-form :deep(.el-radio-button__inner) {
+  color: #1f2937 !important;
+}
+
+.settings-form :deep(.el-radio-button__original-radio:checked + .el-radio-button__inner) {
+  color: #ffffff !important;
+  background: #ff6f00 !important;
+  border-color: #ff6f00 !important;
+}
+
 .form-actions :deep(.el-button) {
   text-transform: none !important;
   letter-spacing: 0 !important;
@@ -975,6 +985,24 @@ const handleCancel = () => {
 :global(.dark) .settings-form :deep(.el-radio-button__inner) {
   background: #0f172a !important;
   box-shadow: 0 0 0 1px #334155 inset !important;
+}
+
+:global(.dark) .settings-form :deep(.el-radio-button__inner) {
+  color: #e2e8f0 !important;
+}
+
+:global(.dark) .settings-form :deep(.el-radio-button__original-radio:checked + .el-radio-button__inner) {
+  color: #111827 !important;
+  background: #ff9f52 !important;
+  border-color: #ff9f52 !important;
+}
+
+:global(.dark) .settings-tabs :deep(.el-tabs__item),
+:global(.dark) .color-value,
+:global(.dark) .slider-label,
+:global(.dark) .sample-text,
+:global(.dark) .notification-label {
+  color: #e2e8f0 !important;
 }
 
 :global(.dark) .settings-tabs :deep(.el-tabs__item.is-active) {

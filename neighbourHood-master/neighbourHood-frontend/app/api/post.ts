@@ -57,6 +57,15 @@ const getCurrentMockUser = () => {
   return { uuid: 'admin-001', username: 'Admin', email: 'admin@gmail.com' }
 }
 
+const fileToDataUrl = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result || ''))
+    reader.onerror = () => reject(new Error('Failed to read image file'))
+    reader.readAsDataURL(file)
+  })
+}
+
 const isValidJwt = (token: string) => token.split('.').length === 3;
 
 const getToken = () => {
@@ -126,9 +135,11 @@ export async function publishPost(formdata: FormData): Promise<APIResponse<Basic
   if (USE_MOCK_POST_API) {
     const title = String(formdata.get('title') ?? '').trim()
     const content = String(formdata.get('content') ?? '').trim()
+    const category = String(formdata.get('category') ?? '').trim()
     const requestType = Number(formdata.get('request_type') ?? 0)
     const isImportant = String(formdata.get('is_important') ?? 'false') === 'true'
     const redeemPoints = Number(formdata.get('redeemPoints') ?? 0)
+    const files = formdata.getAll('files').filter((item): item is File => item instanceof File)
 
     if (!title || !content) {
       const error = new Error('Title and content are required') as Error & { response?: any }
@@ -143,19 +154,28 @@ export async function publishPost(formdata: FormData): Promise<APIResponse<Basic
 
     const posts = loadMockPosts()
     const currentUser = getCurrentMockUser()
+    const postPhotos = await Promise.all(
+      files.map(async (file, index) => ({
+        id: `${Date.now()}-${index}`,
+        url: await fileToDataUrl(file),
+        createTime: new Date().toISOString() as any
+      }))
+    )
+
     const newPost: Post = {
       id: Date.now(),
       type: 0,
       user: currentUser,
       title,
       content,
+      category: category || undefined,
       request_type: requestType,
       share_count: 0,
       acceptUser: null,
       paymentMethod: null,
       is_important: isImportant,
       redeemPoints,
-      postPhotos: null,
+      postPhotos: postPhotos.length ? postPhotos : null,
       createTime: new Date().toISOString() as any
     }
 

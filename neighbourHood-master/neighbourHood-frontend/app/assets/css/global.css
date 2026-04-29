@@ -17,6 +17,11 @@ body {
   font-size: var(--base-font-size, 18px);
 }
 
+body {
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
 /* Element Plus components should respect base font size */
 .el-button,
 .el-input__inner,
@@ -126,4 +131,44 @@ html.dark .el-empty__image svg path {
 
 html.dark .el-empty__description {
   color: #9ca3af !important;
+}
+
+/* General dark mode surfaces and text */
+html.dark body {
+  background: #020617 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .el-main,
+html.dark .el-card,
+html.dark .el-dialog,
+html.dark .el-drawer,
+html.dark .el-popover,
+html.dark .el-dropdown-menu,
+html.dark .el-select-dropdown,
+html.dark .el-picker-panel {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+html.dark .el-form-item__label,
+html.dark .el-text,
+html.dark .el-tabs__item,
+html.dark .el-radio,
+html.dark .el-checkbox,
+html.dark .el-tag,
+html.dark .el-button {
+  color: #e2e8f0;
+}
+
+html.dark .el-input__wrapper,
+html.dark .el-textarea__inner,
+html.dark .el-select__wrapper,
+html.dark .el-input-number,
+html.dark .el-input-number__decrease,
+html.dark .el-input-number__increase {
+  background: #0f172a !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 0 0 1px #334155 inset !important;
 }

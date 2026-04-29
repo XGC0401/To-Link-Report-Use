@@ -4,6 +4,7 @@ export interface Post {
   user?: PostUser
   title: string
   content: string
+  category?: string
   request_type: number
   // likeUsers?: Array<PostUser>
   share_count: number
