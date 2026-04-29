@@ -83,234 +83,38 @@ h3 {
 }
 
 /* =====================================================
-   Element Plus CSS variable overrides for dark mode
-   This is the authoritative approach - variables control
-   ALL EP component backgrounds, borders, and text.
+   Dark mode overrides — layout shell only.
+   Element Plus component variables are handled by the
+   official EP dark theme imported in nuxt.config.ts:
+   element-plus/theme-chalk/dark/css-vars.css
    ===================================================== */
-html.dark {
-  /* backgrounds */
-  --el-bg-color: #1e293b;
-  --el-bg-color-page: #0f172a;
-  --el-bg-color-overlay: #1e293b;
-  /* fills */
-  --el-fill-color-blank: #1e293b;
-  --el-fill-color: #263148;
-  --el-fill-color-light: #263148;
-  --el-fill-color-lighter: #1a2540;
-  --el-fill-color-extra-light: #141e33;
-  --el-fill-color-dark: #2a3a5c;
-  --el-fill-color-darker: #324268;
-  /* text */
-  --el-text-color-primary: #e2e8f0;
-  --el-text-color-regular: #cbd5e1;
-  --el-text-color-secondary: #94a3b8;
-  --el-text-color-placeholder: #64748b;
-  --el-text-color-disabled: #475569;
-  /* borders */
-  --el-border-color: #334155;
-  --el-border-color-light: #334155;
-  --el-border-color-lighter: #1e293b;
-  --el-border-color-extra-light: #1e293b;
-  /* card */
-  --el-card-bg-color: #1e293b;
-  /* header */
-  --el-header-bg-color: #0f172a;
-  /* input */
-  --el-input-bg-color: #1e293b;
-  --el-input-text-color: #e2e8f0;
-  /* mask */
-  --el-mask-color: rgba(0, 0, 0, 0.7);
-  /* disabled states */
-  --el-disabled-bg-color: #263148;
-  --el-disabled-border-color: #334155;
-  --el-disabled-text-color: #64748b;
-  /* overlay / dropdown backgrounds */
-  --el-overlay-color: rgba(0, 0, 0, 0.7);
-  --el-overlay-color-light: rgba(0, 0, 0, 0.5);
-  --el-overlay-color-lighter: rgba(0, 0, 0, 0.3);
-}
 
-/* Default (non-primary) buttons in dark mode */
-html.dark .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info) {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-  color: #e2e8f0 !important;
-}
-
-html.dark .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info):hover {
-  background-color: #263148 !important;
-  border-color: #475569 !important;
-  color: #f1f5f9 !important;
-}
-
-/* Text buttons (no border/bg) in dark mode */
-html.dark .el-button.is-text,
-html.dark .el-button[type="button"].is-text {
-  color: #cbd5e1 !important;
-  background-color: transparent !important;
-}
-
-/* Icons inside buttons should not be white-on-white */
-html.dark .el-button .el-icon,
-html.dark .el-button svg {
-  color: inherit !important;
-  fill: currentColor !important;
-}
-
-/* Input inner text and icons */
-html.dark .el-input__inner {
-  background: transparent !important;
-  color: #e2e8f0 !important;
-}
-
-html.dark .el-input__prefix-inner .el-icon,
-html.dark .el-input__suffix-inner .el-icon,
-html.dark .el-input__clear,
-html.dark .el-select__caret {
-  color: #94a3b8 !important;
-}
-
-/* Select dropdown items */
-html.dark .el-select-dropdown__item {
-  color: #cbd5e1 !important;
-}
-
-html.dark .el-select-dropdown__item.is-selected,
-html.dark .el-select-dropdown__item:hover {
-  color: #f1f5f9 !important;
-  background-color: #263148 !important;
-}
-
-/* Tabs text */
-html.dark .el-tabs__item {
-  color: #94a3b8 !important;
-}
-
-html.dark .el-tabs__item.is-active {
-  color: #e2e8f0 !important;
-}
-
-html.dark .el-tabs__active-bar {
-  background-color: var(--el-color-primary) !important;
-}
-
-/* Dropdown menu */
-html.dark .el-dropdown-menu {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-}
-
-html.dark .el-dropdown-menu__item {
-  color: #cbd5e1 !important;
-}
-
-html.dark .el-dropdown-menu__item:hover,
-html.dark .el-dropdown-menu__item:focus {
-  background-color: #263148 !important;
-  color: #f1f5f9 !important;
-}
-
-/* Dark mode for el-descriptions */
-html.dark .el-descriptions {
-  --el-descriptions-item-bordered-label-background: #262727 !important;
-  --el-descriptions-item-bordered-content-background: #1a1a1a !important;
-  --el-border-color: #404040 !important;
-  --el-fill-color-lighter: #262727 !important;
-  --el-fill-color-blank: #1a1a1a !important;
-  --el-bg-color: #1a1a1a !important;
-}
-
-html.dark .el-descriptions__label,
-html.dark .el-descriptions__label.el-descriptions__cell.is-bordered-label {
-  color: #e5e7eb !important;
-  background-color: #262727 !important;
-}
-
-html.dark .el-descriptions__content,
-html.dark .el-descriptions__content.el-descriptions__cell.is-bordered-content {
-  color: #d1d5db !important;
-  background-color: #1a1a1a !important;
-}
-
-html.dark .el-descriptions__cell {
-  border-color: #404040 !important;
-}
-
-html.dark .el-descriptions .el-descriptions__body {
-  background-color: transparent !important;
-}
-
-html.dark .el-descriptions tr {
-  background-color: transparent !important;
-}
-
-html.dark .el-descriptions__table {
-  background-color: transparent !important;
-}
-
-/* Dark mode for empty state */
-html.dark .el-empty__image svg {
-  fill: #4b5563 !important;
-}
-
-html.dark .el-empty__image svg path {
-  fill: #4b5563 !important;
-}
-
-html.dark .el-empty__description {
-  color: #9ca3af !important;
-}
-
-/* General dark mode surfaces and text */
+/* Page body */
 html.dark body {
-  background: #020617 !important;
-  color: #e2e8f0 !important;
-}
-
-html.dark .el-main,
-html.dark .el-card,
-html.dark .el-dialog,
-html.dark .el-drawer,
-html.dark .el-popover,
-html.dark .el-dropdown-menu,
-html.dark .el-select-dropdown,
-html.dark .el-picker-panel {
   background: #0f172a !important;
   color: #e2e8f0 !important;
-  border-color: #334155 !important;
 }
 
-html.dark .el-form-item__label,
-html.dark .el-text,
-html.dark .el-tabs__item,
-html.dark .el-radio,
-html.dark .el-checkbox,
-html.dark .el-tag,
-html.dark .el-button {
-  color: #e2e8f0;
-}
-
-html.dark .el-input__wrapper,
-html.dark .el-textarea__inner,
-html.dark .el-select__wrapper,
-html.dark .el-input-number,
-html.dark .el-input-number__decrease,
-html.dark .el-input-number__increase {
-  background: #1e293b !important;
-  color: #e2e8f0 !important;
-  box-shadow: 0 0 0 1px #334155 inset !important;
-}
-
-/* Layout shell dark mode (supplement scoped styles in default.vue) */
+/* App layout shell (scoped styles in default.vue are supplemented here) */
 html.dark .app-layout {
-  background: #020617 !important;
+  background: #0f172a !important;
 }
 
 html.dark .app-header {
-  background: #0f172a !important;
-  border-bottom-color: #1e293b !important;
+  background: #1e293b !important;
+  border-bottom-color: #334155 !important;
 }
 
 html.dark .app-title {
   color: #e2e8f0 !important;
+}
+
+/* Radio button label text contrast (settings page time format) */
+html.dark .el-radio__label {
+  color: #e2e8f0 !important;
+}
+
+/* Empty state */
+html.dark .el-empty__description p {
+  color: #94a3b8 !important;
 }

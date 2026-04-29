@@ -1327,40 +1327,4 @@ onUnmounted(() => {
 :global(.dark) .home-page-shell :deep(.el-tag) {
   border-color: #6b3f16 !important;
 }
-
-/* Final theme normalization: avoid mixed light/dark blocks on home page */
-.home-page-shell,
-.home-page-shell .welcome-card,
-.home-page-shell .posts-section,
-.home-page-shell .quests-section,
-.home-page-shell .post-card,
-.home-page-shell .applicant-item {
-  background: #ffffff;
-  border-color: #e5e7eb;
-}
-
-html.dark .home-page-shell,
-html.dark .home-page-shell .welcome-card,
-html.dark .home-page-shell .posts-section,
-html.dark .home-page-shell .quests-section,
-html.dark .home-page-shell .post-card,
-html.dark .home-page-shell .applicant-item {
-  background: #0f172a !important;
-  border-color: #334155 !important;
-  color: #e2e8f0 !important;
-}
-
-html.dark .home-page-shell .section-header h3,
-html.dark .home-page-shell .card-header h2,
-html.dark .home-page-shell .author-name,
-html.dark .home-page-shell .post-content h4,
-html.dark .home-page-shell .post-content p,
-html.dark .home-page-shell .post-time,
-html.dark .home-page-shell .posts-loading-text {
-  color: #e2e8f0 !important;
-}
-
-html.dark .home-page-shell :deep(.el-empty__description) {
-  color: #cbd5e1 !important;
-}
 </style>
